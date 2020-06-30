@@ -1,0 +1,98 @@
+<div class="row clearfix">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-6">
+                        <h2>Quiz History</h2>
+                    </div>
+                </div>
+                <ul class="header-dropdown m-r--5">
+                    <!-- <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);">Action</a></li>
+                            <li><a href="javascript:void(0);">Another action</a></li>
+                            <li><a href="javascript:void(0);">Something else here</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="body">
+                <!-- <pre> -->
+                <?php //print_r($data); ?>
+
+                <table id="example" class="display responsive nowrap" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Quiz</th>
+                            <th>Score</th>
+                            <th>Total Score</th>
+                            <th>Percentage</th>
+                            <th>Remarks</th>
+                            <th>Taken</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data['quizzes'] as $data_key=>$data_value): ?>
+                            <?php if($data_value['total_score']<=0): ?>
+                                <?php $percentage = 0; ?>
+                            <?php else: ?>
+                                <?php $percentage = $data_value['score']/$data_value['total_score']*100; ?>
+                            <?php endif; ?>
+
+                            <?php if($data_value['quiz_type']=="mastery_test"): ?>
+                                <?php if($percentage>=70): ?>
+                                    <?php $remarks = "Above Average"; ?>
+                                <?php elseif($percentage>=50): ?>
+                                    <?php $remarks = "Average"; ?>
+                                <?php else: ?>
+                                    <?php $remarks = "Below Average"; ?>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <?php if($percentage>=$data_value['remarks_percentage']): ?>
+                                    <?php $remarks = "Passed"; ?>
+                                <?php else: ?>
+                                    <?php $remarks = "Failed"; ?>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                            
+                            <tr data="<?php echo $data_value['id']?>" quiz_id="<?php echo $data_value['quiz_id']?>" >
+                                <td><?php echo ucfirst($data_value['quiz_name']) ?></td>
+                                <td><?php echo $data_value['score'] ?></td>
+                                <td><?php echo $data_value['total_score'] ?></td>
+                                <td><?php echo round($percentage,2) ?>%</td>
+                                <td><?php echo $remarks ?></td>
+                                <td><?php echo ben_date($data_value['date_created']) ?></td>
+                            </tr>
+                        <?php endforeach?>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>Quiz</th>
+                            <th>Score</th>
+                            <th>Total Score</th>
+                            <th>Percentage</th>
+                            <th>Remarks</th>
+                            <th>Taken</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<?php $general_class->datatable() ?>
+<script type="text/javascript">
+    var table = $('#example').DataTable();
+    $('#example tbody').on('click', 'tr', function () {
+        var data = $(this).attr('data');
+        var quiz_id = $(this).attr('quiz_id');
+        window.location.href='<?php echo $general_class->ben_link('lms/answer_sheet/answer_sheet/')?>'+data+"/"+quiz_id;
+    });
+</script>

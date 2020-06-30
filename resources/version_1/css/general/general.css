@@ -1,0 +1,93 @@
+/*general/home/index*/
+.carousel-inner{
+	height: 575px !important;
+}
+.item img{
+	height: 575px !important;
+}
+.brainee-carousel_container{
+	padding: 0px;
+}
+.brainee-announcement_container {
+	padding: 0px;
+}
+.brainee-announcement{
+}
+.brainee-announcement_titlebar{
+	background-color: #ff3838;
+	color: white;
+	padding: 10px;
+	font-size: 25px;
+}
+.brainee-announcement_list{
+	border-bottom:1px solid #777777;
+	padding: 10px;
+	max-height: 150px;
+	overflow: hidden;
+}
+.brainee-announcement_list:hover{
+	background-color: #6f6e6e;
+	cursor: pointer;
+	color: white;
+}
+.brainee-announcement_list:last-child{
+	border-bottom:0px solid #777777; 
+}
+.brainee-announcement_title {
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+.brainee-announcement_date_container{
+	margin-bottom: 10px;
+}
+.brainee-announcement_titlebar img {
+	height: 50px;
+}
+/*general/home/index*/
+
+/*general/crud/index*/
+.brainee-page_container{
+	margin-top: 10px;
+}
+.brainee-page_titlebar{
+	background-color: #222;
+	margin-bottom: 10px;
+}
+.brainee-page_titlebar_controls_container{
+	position: relative;
+	background-color: #cacaca;
+	height: 45px;
+	padding: 0px;
+}
+.brainee-page_titlebar_controls_container a{
+	position: absolute;
+	right: 0;
+	padding: 5px;
+}
+.brainee-page_titlebar_controls_container a:nth-child(2) {
+    position: absolute;
+    right: 70px;
+    padding: 5px;
+}
+.brainee-page_titlebar_controls_container a:nth-child(3) {
+    position: absolute;
+    right: 130px;
+    padding: 5px;
+}
+.brainee-page_titlebar_title{
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	padding: 10px;
+}
+.select-checkbox{
+	cursor: pointer;
+}
+#example_wrapper{
+	margin-bottom: 30px;
+}
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+/*general/crud/index*/
