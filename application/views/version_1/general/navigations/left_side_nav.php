@@ -30,7 +30,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand"><?php echo $school_status['shortcut'] ?> Campus Management System</a>
+                <a class="navbar-brand">VICA Learning Tools</a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -84,7 +84,7 @@
                     <li class="<?php if(in_array('ebook', $general_class->toggled)): echo 'active'; endif; ?>">
                         <a href="<?php echo $general_class->ben_link('lms/ebook/index')?>">
                             <img style="height: 30px" src="<?php echo $general_class->ben_resources('images/lesson.png')?>">
-                            <span>Ebooks</span>
+                            <span>Cloud eBooks</span>
                         </a>
                     </li>
                     

@@ -16,7 +16,7 @@
             <div class="header">
                 <div class="row clearfix">
                     <div class="col-xs-12 col-sm-12">
-                        <h1>Welcome to <?php echo $school_status['shortcut'] ?> Community</h1>
+                        <h1>Welcome to VICA Learning Tools</h1>
                     </div>
                 </div>
                 <ul class="header-dropdown m-r--5">
