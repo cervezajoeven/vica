@@ -8,7 +8,7 @@
     
     <meta name="author" content="">
     <link rel="icon" href="<?php echo $general_class->ben_image('general/school.png') ?>">
-    <title>Vicarish LMS</title>
+    <title>Vicarish Learning Tools</title>
     <?php $css_directory = $general_class->ben_resources('version_1/css/general/home/'); ?>
     <?php $js_directory = $general_class->ben_resources('version_1/js/general/home/'); ?>
     <!-- Bootstrap core CSS -->
