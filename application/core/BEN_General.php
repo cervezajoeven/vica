@@ -32,7 +32,7 @@ class BEN_General extends CI_Controller {
 		}
 		$current_function = explode("/", $_SERVER['REQUEST_URI']);
 		if($current_function[2]==""){
-			header("LOCATION: /sics/index.php/version_1/general/dashboard/sms_index");
+			header("LOCATION: /vica/index.php/version_1/general/dashboard/sms_index");
 		}
 		$this->current_page = strtolower(get_class($this));
 		date_default_timezone_set('Asia/Manila');
