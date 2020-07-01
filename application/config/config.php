@@ -37,7 +37,7 @@ if (strpos($url,'localhost') !== false) {
 } elseif(strpos($url,'joeven')) {
 	$config['base_url'] = 'http://'.$url.'/'.$school.'/';
 }else{
-	$config['base_url'] = $scheme."://".$url.'/'.$school.'/';
+	$config['base_url'] = "http://".$url.'/vica/';
 }
 
 
